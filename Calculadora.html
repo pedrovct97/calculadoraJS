@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+
+    <style>
+        body{
+            background-color: rgb(148, 245, 162);
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        input{
+            margin-top: 120px;
+            width: 190px;
+        }
+        div#res{
+            margin-top: 37px;
+        }
+        h1{
+            text-align: center;
+            background-color: rgb(223, 235, 111);
+            width: 250px;
+            height: 40px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+
+</head>
+<body>
+
+    <h1>Calculadora</h1>
+
+    <input type="number" name="txtn1" id="txtn1"> 
+    
+    <select name="oper" id="oper">
+        <option value="somar">Somar</option>
+        <option value="subtrair">Subtrair</option>
+        <option value="multiplicar">Multiplicar</option>
+        <option value="dividir">Dividir</option>
+    </select>
+
+    <input type="number" name="txtn2" id="txtn2">
+
+    <input id="submit" type="button" value="Submit" onClick="calcular()">
+    
+    <div id="res"><strong>Resultado</strong></div>
+
+    <script>
+
+    
+
+    
+
+    function calcular(){
+        var op1 = document.getElementById("oper").textContent
+
+        var tn1 = document.getElementById('txtn1')
+        var tn2 = document.getElementById('txtn2')
+        var n1 = Number(tn1.value)
+        var n2 = Number(tn2.value)
+	    var res = document.getElementById('res')
+        var resultado 
+
+        if(operacao == 'Somar'){
+            resultado = Number(n1 + n2)
+            res.innerHTML = `O resultado da <strong>SOMA</strong> entre ${n1} e ${n2} é : ${resultado}`
+
+        }else if(operacao == 'subtrair'){
+            resultado = Number(n1 - n2)
+            res.innerHTML = `O resultado da <strong>SUBTRAÇÃO</strong> entre ${n1} e ${n2} é : ${resultado}`
+
+        }else if(operacao == 'multiplicar'){
+            resultado = Number(n1 * n2)
+            res.innerHTML = `O resultado da <strong>MULTIPLICAÇÃO</strong> entre ${n1} e ${n2} é : ${resultado}`
+
+        }else if(operacao == 'dividir'){
+            resultado = Number(n1 / n2)
+            res.innerHTML = `O resultado da <strong>DIVISÃO</strong> entre ${n1} e ${n2} é : ${resultado}`
+        }
+    }
+
+    </script>
+</body>
+</html>
