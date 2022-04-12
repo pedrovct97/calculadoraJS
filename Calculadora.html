@@ -35,10 +35,10 @@
 
     <h1>Calculadora</h1>
 
-    <input type="number" id="txtn1"> 
+    <input type="number" name="txtn1" id="txtn1"> 
     
     <select name="oper" id="oper">
-        <option value="somar" selected="selected" >Somar</option>
+        <option value="somar">Somar</option>
         <option value="subtrair">Subtrair</option>
         <option value="multiplicar">Multiplicar</option>
         <option value="dividir">Dividir</option>
@@ -48,46 +48,43 @@
 
     <input id="submit" type="button" value="Submit" onClick="calcular()">
     
-    <span>
-        <strong>Resultado:</strong><div id="res"></div>
-    </span>
+    <div id="res"><strong>Resultado</strong></div>
 
     <script>
-        function calcular(){
-            var op1 = document.getElementById("oper")
-            var tn1 = document.getElementById('txtn1')
-            var tn2 = document.getElementById('txtn2')
-            var res = document.getElementById('res')
 
-            var op = String(op1.options[op1.selectedIndex].value)
-            var n1 = Number(tn1.value)
-            var n2 = Number(tn2.value)
-            
-            res.innerHTML = `O resultado da <strong>SOMA</strong> entre ${n1} e ${n2} é : ${operacao(op,n1,n2)}`
-        }
+    
 
-        function operacao(op, n1, n2){
-            let resultado = 0
-            
-            switch(op){
-                case 'somar': 
-                    resultado = Number(n1 + n2)
-                    break;
-                case 'subtrair':
-                    resultado = Number(n1 - n2)
-                    break;
-                case 'multiplicar':
-                    resultado = Number(n1 * n2)
-                    break;
-                case 'dividir':
-                    resultado = Number(n1 / n2)
-                    break;
-                default:
-                    resultado = Number(n1 + n2)
-                    break;
-            }
-            return resultado
+    
+
+    function calcular(){
+        var op1 = document.getElementById("oper")
+        var operacao = String(op1.options[op1.selectedIndex].value)
+        var tn1 = document.getElementById('txtn1')
+        var tn2 = document.getElementById('txtn2')
+        var n1 = Number(tn1.value)
+        var n2 = Number(tn2.value)
+	    var res = document.getElementById('res')
+
+        var resultado 
+
+        if(operacao == 'somar'){
+            resultado = Number(n1 + n2)
+            res.innerHTML = `O resultado da <strong>SOMA</strong> entre ${n1} e ${n2} é : ${resultado}`
+
+        }else if(operacao == 'subtrair'){
+            resultado = Number(n1 - n2)
+            res.innerHTML = `O resultado da <strong>SUBTRAÇÃO</strong> entre ${n1} e ${n2} é : ${resultado}`
+
+        }else if(operacao == 'multiplicar'){
+            resultado = Number(n1 * n2)
+            res.innerHTML = `O resultado da <strong>MULTIPLICAÇÃO</strong> entre ${n1} e ${n2} é : ${resultado}`
+
+        }else if(operacao == 'dividir'){
+            resultado = Number(n1 / n2)
+            res.innerHTML = `O resultado da <strong>DIVISÃO</strong> entre ${n1} e ${n2} é : ${resultado}`
         }
+    }
+
     </script>
 </body>
 </html>
