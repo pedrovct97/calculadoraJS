@@ -5,33 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora</title>
-
-    <style>
-        body{
-            background-color: rgb(148, 245, 162);
-            text-align: center;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        input{
-            margin-top: 120px;
-            width: 190px;
-        }
-        div#res{
-            margin-top: 37px;
-        }
-        h1{
-            text-align: center;
-            background-color: rgb(223, 235, 111);
-            width: 250px;
-            height: 40px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 
 </head>
 <body>
+
+    <section>
 
     <h1>Calculadora</h1>
 
@@ -50,41 +29,7 @@
     
     <div id="res"><strong>Resultado</strong></div>
 
-    <script>
-
-    
-
-    
-
-    function calcular(){
-        var op1 = document.getElementById("oper")
-        var operacao = String(op1.options[op1.selectedIndex].value)
-        var tn1 = document.getElementById('txtn1')
-        var tn2 = document.getElementById('txtn2')
-        var n1 = Number(tn1.value)
-        var n2 = Number(tn2.value)
-	    var res = document.getElementById('res')
-
-        var resultado 
-
-        if(operacao == 'somar'){
-            resultado = Number(n1 + n2)
-            res.innerHTML = `O resultado da <strong>SOMA</strong> entre ${n1} e ${n2} é : ${resultado}`
-
-        }else if(operacao == 'subtrair'){
-            resultado = Number(n1 - n2)
-            res.innerHTML = `O resultado da <strong>SUBTRAÇÃO</strong> entre ${n1} e ${n2} é : ${resultado}`
-
-        }else if(operacao == 'multiplicar'){
-            resultado = Number(n1 * n2)
-            res.innerHTML = `O resultado da <strong>MULTIPLICAÇÃO</strong> entre ${n1} e ${n2} é : ${resultado}`
-
-        }else if(operacao == 'dividir'){
-            resultado = Number(n1 / n2)
-            res.innerHTML = `O resultado da <strong>DIVISÃO</strong> entre ${n1} e ${n2} é : ${resultado}`
-        }
-    }
-
-    </script>
+    </section>
+    <script src="script.js"></script>
 </body>
 </html>
